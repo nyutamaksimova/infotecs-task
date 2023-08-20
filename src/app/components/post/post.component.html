@@ -1,0 +1,39 @@
+<article class="border-spacing-2 border bg-center pt-2 mb-3 ml-3 mr-3">
+
+    <div class=" text-s px-2">
+
+        <time class="text-gray-500"> {{note.uploadTime.toLocaleString()}} </time> 
+
+<span *ngIf="EditModeService.editMode$ | async; else unset"><button 
+    (click)="EditModeService.close()"
+    class="inline-block items-center rounded-md bg-yellow-50 px-2.5 py-1.5 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
+    >Отменить редактирование</button>
+
+</span>
+        
+<ng-template #unset> <button 
+    (click)="EditModeService.open()"
+    class="inline-block items-center rounded-md bg-yellow-50 px-2.5 py-1.5 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
+    >Редактировать</button></ng-template>
+           
+
+            <button 
+            (click)="delete(note)" 
+            class="inline-block items-center rounded-md bg-red-50 px-2.5 py-1.5 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20"
+            >Удалить</button>
+
+    </div>   
+
+    <div class="px-5 mb-2">     
+        <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" [innerHTML]="note.text"> </p>     
+    </div>    
+
+    <div *ngIf="EditModeService.editMode$ | async" >
+        <app-editor [note]="note"></app-editor>
+      </div>
+
+       
+
+</article>
+       
+
