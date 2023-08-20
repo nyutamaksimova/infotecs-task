@@ -18,6 +18,6 @@ export class AppComponent {
               public EditModeService: EditModeService){
   }
 
-  notes$ : INote[] = notes;
+  notes$ : INote[] = notes; // см. комментарий в './data/notes.ts'
 
 }

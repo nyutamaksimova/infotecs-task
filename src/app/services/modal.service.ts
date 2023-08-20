@@ -1,3 +1,5 @@
+// Сервис, отвечающий за модальное окно
+
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs'
 

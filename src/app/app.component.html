@@ -1,23 +1,30 @@
+<!-- "Шапка страницы" -->
 <header class="bg-purple-300 py-3 flex text-align: justify">
   <div class="container">
+
+    <!-- Название -->
     <h1 class="inline-block text-lg text-left text-purple-50 font-bold px-3">
       {{title | titlecase}}
       </h1>
     
+    <!-- Кнопка для создания новой записи -->
       <button 
       class="absolute right-5 inline-block items-center rounded-md bg-green-50 px-2.5 py-1.5 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20"
       (click)="ModalService.open(); EditModeService.close()"
       >Создать запись</button>
+
   </div>
-  
 </header>
 
+<!-- Область для записей -->
 <div class="container min-h-screen bg-purple-50 pt-2">
 
+  <!-- Записи -->
   <div *ngFor="let note of notes$.reverse()">
     <app-post [note]="note"></app-post>
   </div>
   
+  <!-- Модальное окно для создания записей -->
   <app-modal *ngIf="ModalService.isVisible$ | async">
     <app-addeditor></app-addeditor>
   </app-modal>

@@ -1,3 +1,5 @@
+// Сервис, контролирующий режим редактирования записей. 
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 

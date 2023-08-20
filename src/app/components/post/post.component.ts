@@ -1,3 +1,4 @@
+// Компонента PostComponent отвечает за отображение записей.
 import { Component, Input } from '@angular/core';
 import {INote} from 'src/app/models/inote';
 import { notes } from 'src/app/data/notes';
@@ -18,6 +19,7 @@ export class PostComponent {
 
   @Input() note!: INote;
   
+  // функция для удаления записи
   async delete(postToDelete: INote) {
     notes.splice(notes.indexOf(postToDelete), 1);
   }
