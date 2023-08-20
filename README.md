@@ -17,6 +17,7 @@
 ### Запуск
 
 Клонируйте репозиторий на локальный компьютер.
+
 `git clone https://github.com/nyutamaksimova/infotecs-task.git`
 
 Введите `ng build` в командной строке, чтобы собрать и запустить проект. 
