@@ -57,9 +57,10 @@ export class EditorComponent implements OnInit {
           forEditor:outputData,
         }
 
-        // добавление в список отредактированной записи и удаление старой версии
+        // добавление в список отредактированной записи, удаление старой версии и сортировка списка
         notes.splice(notes.indexOf(this.note), 1);
-        notes.push(editNote)
+        notes.push(editNote);
+        notes.sort((a, b) => a.uploadTime.valueOf() - b.uploadTime.valueOf())
               
       })
       .catch((error: any) => {
