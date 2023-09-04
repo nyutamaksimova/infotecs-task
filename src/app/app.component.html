@@ -28,5 +28,10 @@
   <app-modal *ngIf="ModalService.isVisible$ | async">
     <app-addeditor></app-addeditor>
   </app-modal>
+
+  <!-- Модальное окно для редактирования записей -->
+  <app-modal *ngIf="EditModeService.editMode$ | async">
+    <app-editor [note]="EditModeService.note"></app-editor>
+  </app-modal>
   
 </div>

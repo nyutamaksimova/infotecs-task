@@ -7,18 +7,10 @@
         <time class="text-gray-500"> {{note.uploadTime.toLocaleString()}} </time> 
 
      <!-- Блок кнопок, отвечающих за редактирование и удаление -->
-        <!-- Если режим редактирования активирован, кнопка меняется на "Отменить редактирование"  -->
-        <span *ngIf="EditModeService.editMode$ | async; else unset"><button 
-            (click)="EditModeService.close()"
+         <button 
+            (click)="EditModeService.open(note)"
             class="inline-block items-center rounded-md bg-yellow-50 px-2.5 py-1.5 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
-            >Отменить редактирование</button>
-        </span>
-        
-        <!-- Если же редактирования не происходит, доступна кнопка "Редактировать" -->
-        <ng-template #unset> <button 
-            (click)="EditModeService.open()"
-            class="inline-block items-center rounded-md bg-yellow-50 px-2.5 py-1.5 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
-            >Редактировать</button></ng-template>
+            >Редактировать</button>
            
         <!-- Кнопка "Удалить" -->
         <button 
@@ -32,11 +24,6 @@
     <div class="px-5 mb-2">     
         <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" [innerHTML]="note.text"> </p>     
     </div>    
-
-    <!-- Окно для редактирования -->
-    <div *ngIf="EditModeService.editMode$ | async" >
-        <app-editor [note]="note"></app-editor>
-      </div>
 
 </article>
        
