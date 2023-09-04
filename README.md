@@ -1,6 +1,4 @@
-# InfotecsTask
-
-## SPA web – приложение «Личный дневник»
+# SPA web – приложение «Личный дневник»
 
 Приложение имитирует личный дневник. Есть возможность:
 
@@ -14,11 +12,11 @@
 
 Для редактирования текста использован Editor.js.
 
-### Запуск
+## Запуск
 
 Клонируйте репозиторий на локальный компьютер.
 
-`git clone https://github.com/nyutamaksimova/infotecs-task.git`
+`git clone https://github.com/nyutamaksimova/personal-diary.git`
 
 Введите `ng serve` в командной строке, чтобы собрать и запустить проект по ссылке `http://localhost:4200/`. 
 
